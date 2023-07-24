@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_array - Prints the first n elements of an array of integers,
  * followed by a new line.
@@ -10,21 +11,21 @@
 void print_array(int *a, int n)
 {
 	char buffer[12];
+	int i, j;
 
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		itoa(a[i], buffer, 10);
+		sprintf(buffer, "%d", a[i]);
+		for (j = 0; buffer[j] != '\0'; j++)
+		{
+			write(1, &buffer[j], 1);
+		}
 
-	for (int j = 0; buffer[j] != '\0'; j++)
-	{
-		putchar(buffer[j]);
+		if (i < n - 1)
+		{
+			write(1, ",", 1);
+			write(1, " ", 1);
+		}
 	}
-
-	if (i < n - 1)
-	{
-		putchar(',');
-		putchar(' ');
-	}
-	}
-	putchar('\n');
+	write(1, "\n", 1);
 }
