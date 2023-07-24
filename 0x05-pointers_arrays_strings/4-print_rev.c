@@ -8,18 +8,21 @@
  */
 void print_rev(char *s)
 {
-	int length = 0;
-	int i;
+	int desi = 0;
+	int p;
 
-	while (s[length] != '\0')
+	while (*s != '\0')
 	{
-		length++;
+		desi++;
+		s++;
+	}
+	s--;
+	for (p = desi; p > 0; p--)
+	{
+		_putchar(*s);
+		s--;
 	}
 
-	for (i = length - 1; i >= 0; i--)
-	{
-		printf("%c", s[i]);
-	}
-
-	printf("\n");
+	_putchar('\n');
 }
+
