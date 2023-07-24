@@ -9,12 +9,19 @@
  */
 void puts_half(char *str)
 {
-	int len = strlen(str);
-	int start = len % 2 == 0 ? len / 2 : (len - 1) / 2;
+	int a, b, des;
 
-	for (int i = start; i < len; i++)
-	{
-		printf("%c", str[i]);
-	}
-	printf("\n");
+	des = 0;
+
+	for (a = 0; str[a] != '\0'; a++)
+		des++;
+
+	b = (des / 2);
+
+	if ((des % 2) == 1)
+		b = ((des + 1) / 2);
+
+	for (a = b; str[a] != '\0'; a++)
+		_putchar(str[a]);
+	_putchar('\n');
 }

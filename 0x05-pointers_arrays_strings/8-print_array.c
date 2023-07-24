@@ -10,22 +10,15 @@
  */
 void print_array(int *a, int n)
 {
-	char buffer[12];
-	int i, j;
+	int k;
 
-	for (i = 0; i < n; i++)
+	for (k = 0; k < (n - 1); k++)
 	{
-		sprintf(buffer, "%d", a[i]);
-		for (j = 0; buffer[j] != '\0'; j++)
-		{
-			write(1, &buffer[j], 1);
-		}
-
-		if (i < n - 1)
-		{
-			write(1, ",", 1);
-			write(1, " ", 1);
-		}
+		printf("%d, ", a[k]);
 	}
-	write(1, "\n", 1);
+		if (k == (n - 1))
+		{
+			printf("%d", a[n - 1]);
+		}
+			printf("\n");
 }
