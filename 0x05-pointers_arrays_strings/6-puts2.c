@@ -9,16 +9,23 @@
  */
 void puts2(char *str)
 {
-	if (str == NULL)
-		return;
-
+	int des = 0;
 	int i = 0;
+	char *y = str;
+	int d;
 
-	while (str[i] != '\0')
+	while (*y != '\0')
 	{
-		putchar(str[i]);
-		i += 2;
+		y++;
+		des++;
 	}
-
-	putchar('\n');
+	i = des - 1;
+	for (d = 0 ; d <= i ; d++)
+	{
+		if (d % 2 == 0)
+	{
+		_putchar(str[d]);
+	}
+	}
+	_putchar('\n');
 }
