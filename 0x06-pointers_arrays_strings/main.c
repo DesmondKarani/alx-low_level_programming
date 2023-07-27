@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <ctype.h>
-
+char *string_toupper(char *d);
 /**
  * main - check the code
  *
@@ -17,12 +17,14 @@ int main(void)
     printf("%s", str);
     return (0);
 }
-char *string_toupper(char *str)
+
+/*The function that converts string characters from lower to uppercase*/
+char *string_toupper(char *d)
 {
-        for (int b = 0; str[b]; b++)
+        for (int b = 0; d[b]; b++)
         {
-                str[b] = toupper((unsigned char) str[b]);
+                d[b] = toupper((unsigned char) d[b]);
         }
 
-        return (str);
+        return (d);
 }
