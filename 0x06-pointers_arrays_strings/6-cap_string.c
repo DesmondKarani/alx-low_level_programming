@@ -1,46 +1,36 @@
 #include "main.h"
+
 /**
  * cap_string - a function that capitalizes all words of a string.
  * @sed: the string to be capitalized.
- * is_separator - a function that checks if a character is one of
- * the predefined separators.
- * des: the variable to index and use to loop through the string.
- * Return: the function returns sed, the converted string.
+ * the function returns sed, the converted string.
  */
 char *cap_string(char *sed)
 {
-	/*Initializing the variable I will use in the loop*/
-	int des = 0;
+	int index = 0;
 
-	/**
-	 * is_separator - a function that checks if a character is one of the
-	 * predefined separators.
-	 * @c: the character to be checked.
-	 * Return: 1 if the character is a separator, 0 otherwise.
-	 */
-	int is_separator(char c)
+	while (sed[index])
 	{
-		return (c == ' ' || c == '\t' || c == '\n' || c == ',' || c == ';' ||
-				c == '.' || c == '!' || c == '?' || c == '"' || c == '(' ||
-				c == ')' || c == '{' || c == '}');
-	}
+		while (!(sed[index] >= 'a' && sed[index] <= 'z'))
+			index++;
 
-	/*if statement to capitalize first character if it is lowercase*/
-	if (sed[des] >= 'a' && sed[des] <= 'z')
-	{
-		sed[des] = sed[des] - ('a' - 'A');
-	}
+		if (sed[index - 1] == ' ' ||
+		    sed[index - 1] == '\t' ||
+		    sed[index - 1] == '\n' ||
+		    sed[index - 1] == ',' ||
+		    sed[index - 1] == ';' ||
+		    sed[index - 1] == '.' ||
+		    sed[index - 1] == '!' ||
+		    sed[index - 1] == '?' ||
+		    sed[index - 1] == '"' ||
+		    sed[index - 1] == '(' ||
+		    sed[index - 1] == ')' ||
+		    sed[index - 1] == '{' ||
+		    sed[index - 1] == '}' ||
+		    index == 0)
+			sed[index] -= 32;
 
-	/**
-	 * I introduce a loop to scan through the string
-	 * and capitalize characters after space.
-	 */
-	for (des = 1; sed[des] != '\0'; des++)
-	{
-		if (is_separator(sed[des - 1]) && sed[des] >= 'a' && sed[des] <= 'z')
-		{
-			sed[des] = sed[des] - ('a' - 'A');
-		}
+		index++;
 	}
 
 	return (sed);
