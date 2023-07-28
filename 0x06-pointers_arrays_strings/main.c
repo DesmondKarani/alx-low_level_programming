@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-char *string_toupper(char *d);
+
 /**
  * main - check the code
  *
@@ -8,42 +8,37 @@ char *string_toupper(char *d);
  */
 int main(void)
 {
-    char str[] = "Look up!\n";
+    char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
     char *ptr;
 
-    ptr = string_toupper(str);
+    ptr = cap_string(str);
     printf("%s", ptr);
     printf("%s", str);
     return (0);
 }
 
-/*The function that converts string characters from lower to uppercase*/
-#include "main.h"
-/**
- * string_toupper - a function that changes all lowercase letters
- * in a string to uppercase. Uses ascii conversion, not toupper.
- * @d: is a pointer to the string for conversion.
- * Return: I should return d, which is the converted string.
- */
-char *string_toupper(char *d)
+char *cap_string(char *sed)
 {
-        /**
-         * iterating through string using a loop with int b.
-         * also d[b] makes sure index is not null '\0'
-         */
-        for (int b = 0; d[b]; b++)
+        /*Initializing the variable I will use in the loop*/
+        int des = 0;
+
+        /*if statement to capitalize first character if it is lowercase*/
+        if (sed[des] >= 'a' && sed[des] <= 'z')
         {
-                /**
-                 * In this if condition, I'm checking that the character's
-                 * ascii value is between a and z.
-                 * If it is, I subtract 32 from it to make it cap
-                 */
-                if (d[b] >= 'a' && d[b] <= 'z')
+                sed[des] = sed[des] - ('a' - 'A');
+        }
+
+        /**
+         * I introduce a loop to scan through the string
+         * and capitalize characters after space.
+         */
+        for (des = 1; sed[des] != '\0'; des++)
+        {
+                if (sed[des - 1] == ' ' && sed[des] >= 'a' && sed[des] <= 'z')
                 {
-                        d[b] = d[b] - 32;
+                        sed[des] = sed[des] - ('a' - 'A');
                 }
         }
 
-        /*Here I am just returning the converted string*/
-        return (d);
+        return (sed);
 }
