@@ -3,7 +3,7 @@
 /**
  * cap_string - a function that capitalizes all words of a string.
  * @sed: the string to be capitalized.
- * the function returns sed, the converted string.
+ * Return: returns sed, the converted string.
  */
 char *cap_string(char *sed)
 {
