@@ -8,6 +8,7 @@
 char *string_toupper(char *d)
 {
 	for (int b = 0; d[b]; b++)
+	{
 		
 		d[b] = toupper((unsigned char) d[b]);
 	}
