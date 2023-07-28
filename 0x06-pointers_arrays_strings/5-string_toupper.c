@@ -11,7 +11,9 @@ char *string_toupper(char *d)
 	 * iterating through string using a loop with int b.
 	 * also d[b] makes sure index is not null '\0'
 	 */
-	for (int b = 0; d[b]; b++)
+	int b;
+
+	for (b = 0; d[b]; b++)
 	{
 		/**
 		 * In this if condition, I'm checking that the character's
