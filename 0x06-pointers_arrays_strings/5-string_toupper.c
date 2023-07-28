@@ -1,27 +1,29 @@
 #include "main.h"
-#include <ctype.h>
 /**
- * string_toupper - a function that
- * changes all lowercase letters of a string to uppercase.
- * @d: the string to be converted with toupper.
- * Return: should return the converted string d.
+ * string_toupper - a function that changes all lowercase letters
+ * in a string to uppercase. Uses ascii conversion, not toupper.
+ * @d: is a pointer to the string for conversion.
+ * Return: I should return d, which is the converted string.
  */
 char *string_toupper(char *d)
 {
 	/**
-	 * In this loop, I am iterating through each string character,
-	 *starting from 0, with d[b] making sure the index is not null '\0'
+	 * iterating through the loop with int b.
+	 * also d[b] makes sure index is not null '\0'
 	 */
 	for (int b = 0; d[b]; b++)
 	{
 		/**
-		 * Here, the loop goes through the string starting from
-		 * element 0 changing them to uppercase.
-		 * Uses toupper function from ctype library.
+		 * In this if condition, I'm checking that the character's
+		 * ascii value is between a and z.
+		 * If it is, I subtract 32 from it to make it cap
 		 */
-		d[b] = toupper((unsigned char) d[b]);
+		if (d[b] >= 'a' && d[b] <= 'z')
+		{
+			d[b] = d[b] - 32;
+		}
 	}
 
-	/*Here I am just returning the modified string*/
+	/*Here I am just returning the converted string*/
 	return (d);
 }
