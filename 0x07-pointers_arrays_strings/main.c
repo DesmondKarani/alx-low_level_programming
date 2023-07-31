@@ -20,20 +20,28 @@ int main(void)
     return (0);
 }
 
-char *_strchr(char *s, char c)
+char *_strstr(char *haystack, char *needle)
 {
-        while (*s != '\0')
+        char *p1 = haystack, *p2 = needle;
+        char *p1Adv = haystack;
+
+        while (*++p2)
+                p1Adv++;
+        while (*p1Adv)
         {
-                if (*s == c)
+                char *p1Begin = p1;
+
+                p2 = needle;
+
+                while (*p1 && *p2 && *p1 == *p2)
                 {
-                        return (s);
+                        p1++;
+                        p2++;
                 }
-                s++;
-        }
-        /*check if 'c' is the null character*/
-        if (*s == c)
-        {
-                return (s);
+                if (!*p2)
+                        return (p1Begin);
+                p1 = p1Begin + 1;
+                p1Adv++;
         }
         return (NULL);
 }
