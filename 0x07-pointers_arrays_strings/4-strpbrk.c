@@ -5,22 +5,21 @@
  * @s: The string to evaluate.
  * @accept: The string containing the list of characters to find in 's'
  *
- * Return: A pointer to the byte in 's' that matches one of the bytes in
- *	'accept', or NULL if no such byte is found.
+ * Return: 0 for success.
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+		int k;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j = 0; accept[j] != '\0'; j++)
+		while (*s)
 		{
-			if (s[i] == accept[j])
+			for (k = 0; accept[k]; k++)
 			{
-				return (&s[i]);
+			if (*s == accept[k])
+			return (s);
 			}
+		s++;
 		}
-	}
-	return (NULL);
+
+	return ('\0');
 }
