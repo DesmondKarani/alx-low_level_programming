@@ -18,10 +18,6 @@ char *_strchr(char *s, char c)
 		}
 		s++;
 	}
-	/*check if 'c' is the null character*/
-	if (*s == c)
-	{
-		return (s);
-	}
+
 	return (NULL);
 }
