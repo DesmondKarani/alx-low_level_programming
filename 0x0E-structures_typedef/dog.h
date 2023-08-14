@@ -8,12 +8,6 @@
  *
  * Description: A struct to store various attributes of a dog.
  */
-typedef struct dog
-{
-	char *name;
-	float age;
-	char *owner;
-} dog;
 
 typedef struct dog
 {
