@@ -1,7 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <string.h>
-
 /**
  * add_node_end - Adds a new node at the end of a list_t list.
  * @head: Double pointer to the head of the list.
@@ -21,39 +20,30 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-
-	/* Duplicate the string */
-	new_node->str = strdup(str);
+	new_node->str = strdup(str);/* Duplicate the string */
 	if (new_node->str == NULL)
 	{
 		free(new_node);
 		return (NULL);
 	}
-
-	/* Calculate the length of the string */
-	for (len = 0; str[len]; len++)
+	for (len = 0; str[len]; len++)/* Calculate the length of the string */
 		;
 
-	/* Initialize new node fields */
-	new_node->len = len;
+	new_node->len = len;/* Initialize new node fields */
 	new_node->next = NULL;
 
-	/* If list is empty, new node becomes the head */
-	if (*head == NULL)
+	if (*head == NULL)/* If list is empty, new node becomes the head */
 	{
 		*head = new_node;
 		return (new_node);
 	}
 
-	/* Traverse to the end of the list */
-	last_node = *head;
+	last_node = *head;/* Traverse to the end of the list */
 	while (last_node->next != NULL)
 	{
 		last_node = last_node->next;
 	}
 
-	/* Add new node at the end */
-	last_node->next = new_node;
-
+	last_node->next = new_node;/* Add new node at the end */
 	return (new_node);
 }
