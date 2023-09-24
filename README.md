@@ -23,8 +23,6 @@ This repository contains a collection of C programming projects and exercises fo
 - [0x10-variadic_functions](./0x10-variadic_functions): Working with variadic functions in C.
 - [0x12-singly_linked_lists](./0x12-singly_linked_lists): Introduction to singly linked lists.
 - [0x13-more_singly_linked_lists](./0x13-more_singly_linked_lists): Further practice with singly linked lists.
-- [0x14-bit_manipulation](./0x14-bit_manipulation): Exploring bit manipulation techniques in C.
-- [0x15-file_io](./0x15-file_io): Learning about file I/O operations in C.
 
 ## How to Use
 
