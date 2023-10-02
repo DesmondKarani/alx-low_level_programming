@@ -32,7 +32,7 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[length])
 			length++;
 		write_count = write(fd, text_content, length);
-		if (write_count == -1 || write_count != length)
+		if (write_count == -1 || (size_t)write_count != length)
 		{
 			close(fd);
 			return (-1);
