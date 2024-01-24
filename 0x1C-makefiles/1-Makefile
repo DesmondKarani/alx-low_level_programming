@@ -1,0 +1,14 @@
+# Makefile for task 1
+
+# Compiler to be used
+CC := gcc
+
+# Source files
+SRC := main.c school.c
+
+# Name of the executable
+EXECUTABLE := school
+
+# The all rule builds the executable
+all:
+	$(CC) $(SRC) -o $(EXECUTABLE)

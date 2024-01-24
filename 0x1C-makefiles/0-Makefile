@@ -1,0 +1,8 @@
+# Simple Makefile for 0x1C-makefiles project
+
+# Name of the executable
+EXECUTABLE := school
+
+# The all rule builds the executable
+all:
+	gcc main.c school.c -o $(EXECUTABLE)

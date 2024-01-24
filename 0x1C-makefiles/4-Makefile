@@ -1,0 +1,45 @@
+# Complete Makefile for task 4
+
+# Compiler to be used
+CC := gcc
+
+# Compiler flags
+CFLAGS := -Wall -Werror -Wextra -pedantic
+
+# Source files
+SRC := main.c school.c
+
+# Object files
+OBJ := $(SRC:.c=.o)
+
+# Name of the executable
+NAME := school
+
+# Program to delete files
+RM := rm -f
+
+# The all rule builds the executable
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Compiles .c to .o with CFLAGS
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Deletes Emacs and Vim temporary files, and the executable
+clean:
+	$(RM) *~ $(NAME)
+
+# Deletes the object files
+oclean:
+	$(RM) $(OBJ)
+
+# Deletes Emacs and Vim temporary files, the executable, and the object files
+fclean: clean oclean
+
+# Re-compiles all source files
+re: fclean all
+
+.PHONY: all clean oclean fclean re
