@@ -1,16 +1,16 @@
 # Makefile for task 2
 
 # Compiler to be used
-CC := gcc
+CC = gcc
 
 # Source files
-SRC := main.c school.c
+SRC = main.c school.c
 
 # Object files
-OBJ := $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 # Name of the executable
-NAME := school
+NAME = school
 
 # The all rule builds the executable
 all: $(NAME)
