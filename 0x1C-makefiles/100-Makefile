@@ -1,15 +1,15 @@
 # Advanced Makefile for task 6
 
 # Compiler and flags
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -pedantic
 
 # Source and object files
-SRC = $(wildcard *.c)
-OBJ = $(SRC:.c=.o)
+SRC := $(wildcard *.c)
+OBJ := $(SRC:.c=.o)
 
 # Name of the executable
-NAME = school
+NAME := school
 
 # Rule all: builds the executable
 all: $(NAME)
