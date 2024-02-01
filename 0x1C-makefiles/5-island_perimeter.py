@@ -7,6 +7,7 @@ The grid is a list of lists of integers where 0 represents water and
 Cells are only connected horizontally and vertically.
 """
 
+
 def island_perimeter(grid):
     """
     Returns the perimeter of the island described in grid.
@@ -28,6 +29,8 @@ def island_perimeter(grid):
     return perimeter
 
 # Test the function with the provided main
+
+
 if __name__ == "__main__":
     grid = [
         [0, 0, 0, 0, 0, 0],
