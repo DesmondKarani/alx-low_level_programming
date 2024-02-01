@@ -1,0 +1,40 @@
+# Advanced Makefile for task 6
+
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source and object files
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+# Name of the executable
+NAME = school
+
+# Rule all: builds the executable
+all: $(NAME)
+
+# Pattern rule for compiling source files
+$(NAME): $(OBJ)
+	$(CC) $^ -o $@
+
+# Pattern rule for object files (without using %.o: %.c)
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rule clean: deletes Emacs/Vim temp files and the executable
+clean:
+	/bin/rm -f *~ $(NAME)
+
+# Rule oclean: deletes the object files
+oclean:
+	/bin/rm -f $(OBJ)
+
+# Rule fclean: deletes temp files, executable, and object files
+fclean: clean oclean
+
+# Rule re: forces recompilation of all source files
+re: fclean all
+
+# Additional requirements
+.PHONY: all clean oclean fclean re
